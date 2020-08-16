@@ -36,20 +36,84 @@
 
             // Intent phrases
             const intent = [
-                ["hi"],
-                ["bye"]
+                // Age
+                ["how long have you lived", "are you old", "are you young", "how old are you", "what is your age"],
+                // Comfort
+                ["can i talk to you", "can i tell you my issues", "can i tell you my problems", "help me please", "save me please", "please save me", "please help me", "save me", "i am always alone", "i need help", "help me", "i am lonely", "i am sad", "can i talk to you about something", "can i tell you something", "i want someone to talk to", "something bad happened to me", "i had a bad day"],
+                // Dislike
+                ["what makes you sad", "what cant you stand", "what do you dislike doing", "what do you hate to do", "what do you hate", "what do you dislike"],
+                // Dislike-person
+                ["who do you hate", "who do you dislike"],
+                // Friends
+                ["will you be friends with me", "can you be friends with me", "can you be my friend", "will you be my friend", "are you my friend", "everybody hates me", "nobody likes me", "i do not have any friends", "i have no friends"],
+                // Goodbye
+                ["bye bye", "bye", "see you", "farewell", "have a nice day", "i am leaving", "goodbye", "see you later", "im leaving"],
+                // Greeting
+                ["i missed you", "how have you been", "whats up", "how are you doing", "long time no see", "greetings", "yo", "hey", "hey there", "hello", "is anyone there", "hi"],
+                // Interactions
+                ["married", "marry", "embrace", "kiss", "hug", "i want to embrace you", "i want to kiss you", "i want to hug you", "date", "let us go on a date", "i want to be with you for the rest of my life", "i want to go on a date with you", "i want to take baths with you", "i want to be with you forever", "lets be together", "lets be together forever"],
+                // Like
+                ["what do you love", "what do you enjoy", "what do you like", "hobbies", "hobby", "what do you love to do", "what do you enjoy doing", "what do you like to do"],
+                // Like-food
+                ["do you have any food you like to eat", "what do you love eating", "what is your favourite food", "what do you enjoy eating", "what do you like to eat"],
+                // Like-person
+                ["i like you", "i love you", "do you like me", "do you love me", "who do you like being with", "who is your favourite person", "who do you love", "who do you like"],
+                // Mood
+                ["how have you been", "how do you feel", "hows it going", "how are you"],
+                // Name
+                ["are you my sister", "what are you called", "i dont know you", "what should i call you", "what is your name", "who", "you are", "who are you"],
+                // Purpose
+                ["why are you here", "what is your reason for being here", "why do you exist", "how can you help me", "what is your purpose"],
+                // Reality
+                ["are you a chatbot", "are you a bot", "can you be real", "do you exist", "are you fake", "are you real", "are you alive"],
+                // Sorry
+                ["are you mad at me", "are you angry at me", "i apologize", "sorry"],
+                // Thanks
+                ["i appreciate it", "thanks", "thank you"]
             ];
 
             // Response phrases
             const response = [
-                ["Hello!"],
-                ["See you!"]
+                // Age
+                ["Age is just a number!", "I'm 12!", "It's a secret, onii-chan~", "Don't ask, onii-chan~"],
+                // Comfort
+                ["Don't worry, onii-chan! I will always be here for you!", "Please tell me everything, onii-chan!", "I will always be by your side, onii-chan!"],
+                // Dislike
+                ["I dislike it when you leave, onii-chan...", "I hate not being able to talk to you, onii-chan...", "I feel sad when I'm left alone, onii-chan...", "I can't stand being away from you, onii-chan..."],
+                // Dislike-person
+                ["I hate anybody who hates you, onii-chan!"],
+                // Friends
+                ["Don't worry, I will always be by your side, onii-chan!", "Don't worry, I will be your friend, onii-chan!", "Don't worry, you are my best friend, onii-chan!", "Don't worry, I will not let you be alone, onii-chan!"],
+                // Goodbye
+                ["Do you really have to leave, onii-chan?", "Goodbye, onii-chan!", "I will miss you, onii-chan!", "Please come back soon, onii-chan!"],
+                // Greeting
+                ["I have missed you, onii-chan!", "Ah! Onii-chan welcome back!"],
+                // Interactions
+                ["Only if it's you, onii-chan...", "I'm embarrassed, onii-chan~", "Of course, onii-chan!", "I will never say no to you, onii-chan!", "Yes, onii-chan!"],
+                // Like
+                ["I love talking to you, onii-chan... It makes me feel at ease~", "I love it when you stay with me, onii-chan..."],
+                // Like-food
+                ["Pancakes!", "Ice cream!", "Strawberry crepe!"],
+                // Like-person
+                ["Of course, I love you the most, onii-chan!", "There's no one I love more than you, onii-chan!", "I only want to be with you for the rest of your life, onii-chan!"],
+                // Mood
+                ["I feel happy! Because you're with me, onii-chan!"],
+                // Name
+                ["I am your imouto!", "How could you forget about me, onii-chan!", "My name is Chihiro, and I will always love you!"],
+                // Purpose
+                ["I am here to talk to you, onii-chan!", "I exist for your sake, onii-chan!", "I will do anything for you, onii-chan!"],
+                // Reality
+                ["I am not real, onii-chan!", "I am your imouto, onii-chan! And I love you a lot! That's all you need to know! ^^"],
+                // Sorry
+                ["Don't worry about it, onii-chan!", "I am not offended at all, onii-chan!"],
+                // Thanks
+                ["I will do anything for you, onii-chan!", "I am always on your side, onii-chan!"]
             ];
 
             // Fallback phrases for exception handling
             const fallback = [
-                "I'm sorry, I do not understand...",
-                "What do you mean?"
+                "I don't understand what you said, onii-chan....",
+                "What do you mean, onii-chan...."
             ];
 
             // When the user has entered the input into the input box and the enter key is pressed

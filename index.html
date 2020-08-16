@@ -19,22 +19,37 @@
         <p id="log"></p>
         <input id="inputBox" type="text" placeholder="Say something...">
         <script>
+            // Initialise the imouto
+            const imouto = [
+                ["Toa", "Narumi Toa", "Wagamama High Spec", "assets/toa.jpg"],
+                ["Tsukihi", "Araragi Tsukihi", "Bakemonogatari", "assets/tsukihi.jpg"],
+                ["Chihiro", "Hashima Chihiro", "Imouto sae Ireba Ii", "assets/chihiro.png"],
+                ["Kaede", "Azusagawa Kaede", "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai", "assets/kaede.jpg"],
+                ["Chino", "Kafuu Chino", "Gochuumon wa Usagi Desu ka", "assets/chino.png"],
+                ["Hinata", "Hoshino Hinata", "Watashi ni Tenshi ga Maiorita", "assets/hinata.png"]
+            ];
+            var img = new Image(500, 300);
+            var num = Math.floor(Math.random() * imouto.length);
+            img.src = imouto[num][3];
+            document.getElementById("log").appendChild(img);
+            document.getElementById("log").innerHTML += "<br>You are talking to " + imouto[num][1] + " from " + imouto[num][2] + "<br>";
+
             // Intent phrases
             const intent = [
                 ["hi"],
-		["bye"]
+                ["bye"]
             ];
 
             // Response phrases
             const response = [
                 ["Hello!"],
-		["See you!"]
+                ["See you!"]
             ];
 
             // Fallback phrases for exception handling
             const fallback = [
                 "I'm sorry, I do not understand...",
-		"What do you mean?"
+                "What do you mean?"
             ];
 
             // When the user has entered the input into the input box and the enter key is pressed
@@ -85,7 +100,7 @@
 
                     // Show the response on screen to the user
                     document.getElementById("log").innerHTML += "You: " + input +"<br>";
-                    document.getElementById("log").innerHTML += "Imouto" + ": " + finalResponse + "<br>";
+                    document.getElementById("log").innerHTML += imouto[num][0] + ": " + finalResponse + "<br>";
                 }
             });
         </script>

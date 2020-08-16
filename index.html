@@ -189,6 +189,9 @@
 		    imoutoTextBox.id = 'imoutoTextBox';
 		    imoutoTextBox.innerHTML += imouto[num][0] + ": " + finalResponse + "<br>";
 		    document.getElementById("log").appendChild(imoutoTextBox);
+
+		    // Allow webpage to automatically keep scrolling to the bottom while text boxes are added 
+		    window.scrollTo(0, document.body.scrollHeight);
                 }
             });
         </script>

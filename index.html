@@ -13,6 +13,24 @@
                 padding: 5px;
                 border: 1px solid black;
             }
+	    #userTextBox {
+		color: white;
+	  	background: blue;
+		padding: 10px;
+		margin: 5px;
+		width: 500px;
+		border-width: medium;
+		border-radius: 20px;
+	    }
+	    #imoutoTextBox {
+		color: white;
+	  	background: red;
+		padding: 10px;
+		margin: 5px;
+		width: 500px;
+		border-width: medium;
+		border-radius: 20px;
+	    }
         </style>
     </head>
     <body>
@@ -163,8 +181,14 @@
                     }
 
                     // Show the response on screen to the user
-                    document.getElementById("log").innerHTML += "You: " + input +"<br>";
-                    document.getElementById("log").innerHTML += imouto[num][0] + ": " + finalResponse + "<br>";
+		    var userTextBox = document.createElement('div');
+		    userTextBox.id = 'userTextBox';
+		    userTextBox.innerHTML += "You: " + input + "<br>";
+		    document.getElementById("log").appendChild(userTextBox);
+		    var imoutoTextBox = document.createElement('div');
+		    imoutoTextBox.id = 'imoutoTextBox';
+		    imoutoTextBox.innerHTML += imouto[num][0] + ": " + finalResponse + "<br>";
+		    document.getElementById("log").appendChild(imoutoTextBox);
                 }
             });
         </script>

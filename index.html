@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Imouto Chatbot</title>
+        <style>
+            body {
+                background-color: pink;
+                font-size: 20px; 
+                font-family: "Arial"; 
+            }
+            #inputBox {
+                padding: 5px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="log"></p>
+        <input id="inputBox" type="text" placeholder="Say something...">
+        <script>
+            // Intent phrases
+            const intent = [
+                ["hi"],
+		["bye"]
+            ];
+
+            // Response phrases
+            const response = [
+                ["Hello!"],
+		["See you!"]
+            ];
+
+            // Fallback phrases for exception handling
+            const fallback = [
+                "I'm sorry, I do not understand...",
+		"What do you mean?"
+            ];
+
+            // When the user has entered the input into the input box and the enter key is pressed
+            const inputBox = document.getElementById("inputBox");
+            inputBox.addEventListener("keydown", function(e) {
+                if (e.code === "Enter") {
+
+                    // Get text in input box and pass that value to a variable
+                    var input = inputBox.value;
+
+                    // Clear text in input box on screen
+                    inputBox.value = "";
+
+                    // Transform user input into lowercase and remove all chars except word characters, space, and digits
+                    var text = input.toLowerCase().replace(/[^\w\s\d]/gi, "");
+
+                    // Remove redundant parts of user input
+                    text = text
+                        .replace(/ a /g, " ")
+                        .replace(/i feel /g, "")
+                        .replace(/whats/g, "what is")
+                        .replace(/please /g, "")
+                        .replace(/ please/g, "");
+
+                    // Function to try and match the intent phrases with the response phrases
+                    function compare(intentArray, responseArray, string) {
+                        var item;
+                        for (let x = 0; x < intentArray.length; x++) {
+                            for (let y = 0; y < responseArray.length; y++) {
+                                if (intentArray[x][y] == string) {
+                                    items = responseArray[x];
+                                    item = items[Math.floor(Math.random() * items.length)];
+                                }
+                            }
+                        }
+                        return item;
+                    }
+
+                    // Initialise the variable which contains the final response
+                    var finalResponse;
+
+                    // Search for an exact match with the intent phrases, if there are none, respond with fallback phrase
+                    if (compare(intent, response, text)) {
+                        finalResponse = compare(intent, response, text);
+                    } else {
+                        finalResponse = fallback[Math.floor(Math.random() * fallback.length)];
+                    }
+
+                    // Show the response on screen to the user
+                    document.getElementById("log").innerHTML += "You: " + input +"<br>";
+                    document.getElementById("log").innerHTML += "Imouto" + ": " + finalResponse + "<br>";
+                }
+            });
+        </script>
+    </body>
+</html>
